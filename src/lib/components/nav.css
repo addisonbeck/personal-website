@@ -1,0 +1,59 @@
+* {
+  --nav-title-color: var(--accent);
+  --nav-section-color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  gap: 10px;
+}
+
+.nav .title {
+  flex-grow: 100;
+}
+
+.nav .title a {
+  line-height: 1;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav .title-link {
+  color: var(--nav-title-color);
+}
+
+.nav .title-link:visited {
+  color: var(--nav-title-color);
+}
+
+.nav .sections {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 12px;
+  flex-grow: 1;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.nav .sections .section {
+  flex-grow: 1;
+  text-decoration: none;
+  color: var(--nav-section-color);
+}
+
+.nav .sections .section:visited {
+  color: var(--nav-section-color);
+}
+
+.nav .sections .section:hover {
+  color: var(--nav-section-color);
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}

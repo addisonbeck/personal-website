@@ -1,0 +1,13 @@
+* {
+  --header-bg-color: var(--primary);
+  --header-border-color: var(--accent);
+}
+
+.header {
+  padding: 15px 20px;
+  background-color: var(--header-bg-color);
+  border-bottom: 1px solid var(--header-border-color);
+  display: flex;
+  justify-content: space-between;
+}
+

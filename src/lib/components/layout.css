@@ -1,0 +1,24 @@
+:root {
+  --primary: #ffffff;
+  --accent: #000000;
+
+  --background-color: var(--primary);
+  --text-color: var(--accent);
+}
+
+.dark {
+  --primary: #000000;
+  --accent: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.uppercase {
+  text-transform: uppercase
+}
+

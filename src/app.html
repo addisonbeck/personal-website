@@ -10,3 +10,34 @@
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
+
+<script>
+  const preference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+  function setDarkMode(dark, preference) {
+      if (dark) {
+          preference !== "dark" ? localStorage.setItem('theme', 'dark') : localStorage.removeItem('theme');
+          document.documentElement.classList.add('dark');
+      } else if (!dark) {
+          preference !== "light" ? localStorage.setItem('theme', 'light') : localStorage.removeItem('theme');
+          document.documentElement.classList.remove('dark');
+      }
+  };
+
+  function getIsDark() {
+    return localStorage.getItem('theme') === "dark" || (!('theme' in localStorage) && preference === 'dark')
+  }
+
+  function toggleTheme() {
+    console.log("toggling!");
+    setDarkMode(!getIsDark(), preference);
+  }
+
+  if (getIsDark()) {
+      setDarkMode(true, preference);
+  } else {
+      setDarkMode(false, preference);
+  }
+
+  document.getElementById("themeToggle").addEventListener('click', toggleTheme);
+</script>
