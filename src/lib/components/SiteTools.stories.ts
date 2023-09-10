@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Home from './Home.svelte';
+import SiteTools from './SiteTools.svelte';
 
 const meta = {
-  title: 'Home',
-  component: Home,
+  title: 'Site Tools',
+  component: SiteTools,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
 } satisfies Meta<Home>;
 
 export default meta;

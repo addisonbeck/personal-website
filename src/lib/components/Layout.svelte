@@ -3,6 +3,12 @@
   import './layout.css'
 </script>
 <div class="root-container">
-  <Header />
-  <slot />
+  <div class="header-section">
+    <Header />
+  </div>
+  <div class="main-section">
+    <main>
+      <slot />
+    </main>
+  </div>
 </div>

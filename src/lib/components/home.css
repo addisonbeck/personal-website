@@ -1,0 +1,5 @@
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 1000px) 1fr;
+}
+

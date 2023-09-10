@@ -7,6 +7,8 @@
 <header>
   <div class="header">
     <Nav />
-    <ThemeToggle />
+    <div class="theme-toggle-section">
+      <ThemeToggle />
+    </div>
   </div>
 </header>

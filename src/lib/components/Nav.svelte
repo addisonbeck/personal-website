@@ -1,7 +1,7 @@
 <script lang="ts">
   import './nav.css';
 
-  export let title: { title: string, href: string } | null = { title: "ADDISON BECK", href: "/" };
+  export let title: { large: string, small: string, href: string } | null = { large: "ADDISON BECK", small: "AB:", href: "/" };
   export let sections: { title: string, href: string }[] =  [
     { title: "about", href: "about" },
     { title: "resume", href: "resume" },
@@ -11,10 +11,11 @@
   export let allCaps: boolean = true;
 </script>
 
-<div class="nav">
-  {#if title?.title != null}
+<nav class="nav">
+  {#if title?.large != null && title?.small != null}
     <div class="title">
-      <a class="title-link" href="{title.href}">{title.title}</a>
+      <a class="title-link title-large" href="{title.href}">{title.large}</a>
+      <a class="title-link title-small" href="{title.href}">{title.small}</a>
     </div>
   {/if}
   <div class="sections">
@@ -24,4 +25,4 @@
       {/each}
     {/if}
   </div>
-</div>
+</nav>

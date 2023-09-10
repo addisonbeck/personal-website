@@ -1,7 +1,8 @@
 <script lang="ts">
   import './home.css';
+  import SiteSummary from './SiteSummary.svelte'
 </script>
 
 <div class="home-container">
-  <h1>Home!</h1>
+  <SiteSummary />
 </div>

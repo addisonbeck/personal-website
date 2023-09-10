@@ -7,7 +7,6 @@
   padding: 15px 20px;
   background-color: var(--header-bg-color);
   border-bottom: 1px solid var(--header-border-color);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
-

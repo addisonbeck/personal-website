@@ -27,7 +27,7 @@ export const NoTitle: Story = {
 
 export const NoHref: Story = {
   args: {
-    title: { title: "No Link" },
+    title: { large: "No Link", small: "NL:" },
   },
 };
 
