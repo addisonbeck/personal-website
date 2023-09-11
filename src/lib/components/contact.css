@@ -9,7 +9,9 @@
   text-align: center;
   grid-column: 2;
   grid-row: 2;
-  border: 1px solid;
   padding: 20px;
-  margin-top: 20%
+  margin-top: 20%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
 }
