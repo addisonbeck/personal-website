@@ -3,6 +3,8 @@
 </script>
 
 <div class="contact-container">
-  <h1>Contact!</h1>
+  <div class="contact-card">
+    Shoot me an email at <a href="mailto:addisonbeck1@gmail.com">addisonbeck1@gmail.com</a>
+  </div>
 </div>
 

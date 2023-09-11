@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Contact from './About.svelte';
+import Contact from './Contact.svelte';
 
 const meta = {
   title: 'Contact',
