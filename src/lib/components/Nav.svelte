@@ -5,7 +5,6 @@
   export let sections: { title: string, href: string }[] =  [
     { title: "about", href: "about" },
     { title: "resume", href: "resume" },
-    { title: "stats", href: "stats" },
     { title: "contact", href: "contact" },
   ]
   export let allCaps: boolean = true;
