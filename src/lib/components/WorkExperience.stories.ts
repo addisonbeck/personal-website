@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import WorkExperience from './WorkExperience.svelte';
 
 const meta = {
-  title: 'Work Experience',
+  title: 'Resume/Work Experience',
   component: WorkExperience,
   tags: ['autodocs'],
 } satisfies Meta<WorkExperience>;

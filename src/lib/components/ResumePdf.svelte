@@ -3,6 +3,8 @@
   import ResumeSections from "./ResumeSections.svelte"
   import jsPDF from "jspdf"
 
+  export let action: "download" | "open" = "download";
+
   function download() {
     const result = document.createElement('div');
 		const r = <HTMLElement>document.querySelector("#pdf")?.cloneNode(true);
@@ -16,7 +18,9 @@
     pdf.html(<HTMLElement>result, {
         callback: function () {
             document.body.removeChild(result);
-            pdf.save("Resume")
+            action === "download" ?
+              pdf.save("Resume") :
+              window.open(pdf.output('bloburl'));
         },
         html2canvas: {
           scale: 600 / r.scrollWidth

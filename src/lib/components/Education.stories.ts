@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Education from './Education.svelte';
 
 const meta = {
-  title: 'Education',
+  title: 'Resume/Education',
   component: Education,
   tags: ['autodocs'],
 } satisfies Meta<Education>;
