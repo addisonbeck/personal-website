@@ -25,6 +25,7 @@
 </script>
 <svelte:head>
     <title>Contact | Addison Beck</title>
+    <meta name="description" content="You can reach Addison by email at hello@addisonbeck.com" />
 </svelte:head>
 <div class="contact-container">
   <div class="contact-card">

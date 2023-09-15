@@ -4,6 +4,7 @@
 </script>
 <svelte:head>
     <title>Resume | Addison Beck</title>
+    <meta name="description" content="Addison Beck is a software engineer with almost a decade in the field. Addison has worked on teams small and large, and loves OSS." />
 </svelte:head>
 <div class="resume-container">
   <ResumePdf/>
