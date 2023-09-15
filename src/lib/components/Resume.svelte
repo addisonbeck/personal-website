@@ -2,7 +2,9 @@
   import ResumePdf from "./ResumePdf.svelte"
   import ResumeWeb from "./ResumeWeb.svelte"
 </script>
-
+<svelte:head>
+    <title>Resume | Addison Beck</title>
+</svelte:head>
 <div class="resume-container">
   <ResumePdf/>
   <ResumeWeb/>

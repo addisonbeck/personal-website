@@ -1,7 +1,9 @@
 <script lang="ts">
   import SiteSummary from './SiteSummary.svelte'
 </script>
-
+<svelte:head>
+    <title>Addison Beck</title>
+</svelte:head>
 <div class="home-container">
   <SiteSummary />
 </div>

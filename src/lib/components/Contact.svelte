@@ -23,7 +23,9 @@
 		}, 1500);
   });
 </script>
-
+<svelte:head>
+    <title>Contact | Addison Beck</title>
+</svelte:head>
 <div class="contact-container">
   <div class="contact-card">
     <span>Shoot me an email at </span>
