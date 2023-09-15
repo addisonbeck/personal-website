@@ -14,7 +14,7 @@
     </p>
     <SiteTools />
     <p>
-      You can check out the source code on <a href="https://github.com/addisonbeck/personal-website">GitHub</a>. 
+      You can check out the source code on <a href="https://github.com/addisonbeck/personal-website" target="_blank">GitHub</a>. 
       PR's are welcome 🤠
     </p>
     <p>
