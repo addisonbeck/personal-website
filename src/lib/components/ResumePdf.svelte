@@ -15,9 +15,8 @@
     let pdf = new jsPDF('p', 'pt', 'a4');
     pdf.html(<HTMLElement>result, {
         callback: function () {
-            //pdf.save("Resume")
             document.body.removeChild(result);
-            window.open(pdf.output('bloburl'));
+            pdf.save("Resume")
         },
         html2canvas: {
           scale: 600 / r.scrollWidth
