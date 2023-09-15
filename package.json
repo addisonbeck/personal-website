@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev --config ./vite.config.dev.ts --host",
+    "dev": "vite dev",
+    "dev:addison": "vite dev --config ./vite.config.dev.ts --host",
     "build": "vite build",
     "preview": "vite preview",
     "test": "npm run test:integration && npm run test:unit",
@@ -13,7 +14,8 @@
     "format": "prettier --plugin-search-dir . --write .",
     "test:integration": "playwright test",
     "test:unit": "vitest",
-    "storybook": "storybook dev -p 6006 --https --ssl-cert ./addisonbeck.dev.crt --ssl-key ./addisonbeck.dev.key --no-open",
+    "storybook": "storybook dev",
+    "storybook:addison": "storybook dev -p 6006 --https --ssl-cert ./addisonbeck.dev.crt --ssl-key ./addisonbeck.dev.key --no-open",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
