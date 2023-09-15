@@ -5,7 +5,7 @@ const meta = {
   title: 'Site Tools',
   component: SiteTools,
   tags: ['autodocs'],
-} satisfies Meta<Home>;
+} satisfies Meta<SiteTools>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

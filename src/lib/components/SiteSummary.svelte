@@ -1,5 +1,4 @@
 <script lang="ts">
-  import './siteSummary.css';
   import SiteTools from './SiteTools.svelte'
 </script>
 
@@ -26,3 +25,22 @@
     </p>
   </div>
 </div>
+
+<style>
+  .site-summary {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 90% 1fr;
+    border: 1px solid;
+  }
+
+  .site-summary-heading {
+    grid-column: 2;
+  }
+
+  .site-summary-body {
+    grid-column: 2;
+    font-size: 20px;
+  }
+</style>

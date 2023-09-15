@@ -1,8 +1,14 @@
 <script lang="ts">
-  import './home.css';
   import SiteSummary from './SiteSummary.svelte'
 </script>
 
 <div class="home-container">
   <SiteSummary />
 </div>
+
+<style>
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 1000px) 1fr;
+  }
+</style>

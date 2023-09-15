@@ -1,6 +1,4 @@
 <script lang="ts">
-  import './nav.css';
-
   export let title: { large: string, small: string, href: string } | null = { large: "ADDISON BECK", small: "AB:", href: "/" };
   export let sections: { title: string, href: string }[] =  [
     { title: "about", href: "about" },
@@ -25,3 +23,45 @@
     {/if}
   </div>
 </nav>
+
+<style>
+  .nav {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) auto;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  .nav .title .title-link {
+    line-height: 1;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .nav .title .title-small {
+    display: none;
+  }
+
+  .nav .sections {
+    display: grid;
+    grid-auto-flow: column dense;
+    column-gap: 10px;
+    font-size: 12px;
+    padding-right: 5px;
+  }
+
+  .nav .sections .section {
+    text-underline-offset: 10px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .nav .title .title-large {
+       display: none;
+    }
+
+    .nav .title .title-small {
+       display: inherit;
+    }
+  }
+</style>

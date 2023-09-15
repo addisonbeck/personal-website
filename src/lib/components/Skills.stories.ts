@@ -1,14 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import Resume from './Resume.svelte';
+import Skills from './Skills.svelte';
 
 const meta = {
-  title: 'Resume',
-  component: Resume,
+  title: 'Skills',
+  component: Skills,
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-  },
-} satisfies Meta<Resume>;
+} satisfies Meta<Skills>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

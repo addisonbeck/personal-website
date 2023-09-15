@@ -1,10 +1,10 @@
 <script lang="ts">
-  import './contact.css';
 	import { onMount } from 'svelte'
   let message = 'hi';
   const messages = [
     'hi',
     'hello',
+    'olleh',
     'howdy',
     '您好',
     'salut',
@@ -33,3 +33,22 @@
   </div>
 </div>
 
+<style>
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr minmax(220px, 600px) 1fr;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .contact-card {
+    text-align: center;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 20px;
+    margin-top: 20%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+  }
+</style>

@@ -1,7 +1,16 @@
 <script lang="ts">
-  import './resume.css';
+  import ResumePdf from "./ResumePdf.svelte"
+  import ResumeWeb from "./ResumeWeb.svelte"
 </script>
 
 <div class="resume-container">
-  <h1>Resume!</h1>
+  <ResumePdf/>
+  <ResumeWeb/>
 </div>
+
+<style>
+  .resume-container {
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 1000px) 1fr;
+  }
+</style>
