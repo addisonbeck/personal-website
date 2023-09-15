@@ -4,17 +4,23 @@
   import jsPDF from "jspdf"
 
   function download() {
-    const n = <HTMLElement>document.getElementById('pdf');
+    const result = document.createElement('div');
+		const r = <HTMLElement>document.querySelector("#pdf")?.cloneNode(true);
+    r.classList.add("show")
+    r.id = "downloadPdfTemp"
+    result.appendChild(r)
+    console.log(result);
+    document.body.append(result);
+
     let pdf = new jsPDF('p', 'pt', 'a4');
-    n.classList.toggle("hidden")
-    pdf.html(n, {
+    pdf.html(<HTMLElement>result, {
         callback: function () {
-            pdf.save("Resume")
-            // window.open(pdf.output('bloburl'));
-            n.classList.toggle("hidden")
+            //pdf.save("Resume")
+            document.body.removeChild(result);
+            window.open(pdf.output('bloburl'));
         },
         html2canvas: {
-          scale: 600 / n.scrollWidth
+          scale: 600 / r.scrollWidth
         },
         margin: [40, 0, 40, 0]
     });
@@ -28,7 +34,7 @@
        Download
     </button>
   </span>
-</div>
-<div id="pdf" class="resume light hidden no-decoration">
-  <ResumeSections/>
+  <div id="pdf" class="pdf resume light no-decoration">
+    <ResumeSections/>
+  </div>
 </div>

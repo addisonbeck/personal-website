@@ -3,6 +3,8 @@
   --download-button-color: var(--accent);
 }
 
+
+
 .web-header {
   grid-column: 2;
   display: grid;
@@ -33,8 +35,8 @@
   border-style: solid;
 }
 
-#pdf.resume {
-  display: block;
+.pdf.resume {
+  display: none;
   width: 500px;
   font-size: 10px;
   font-family: Times;
@@ -43,11 +45,11 @@
   font-size: 10px;
 }
 
-#pdf.resume.hidden {
-  display: none;
+.pdf.resume.show {
+  display: block;
 }
 
-#pdf h3 {
+.pdf h3 {
   padding-bottom: 5px;
   border-bottom: 1px dotted;
   width: 70%;
