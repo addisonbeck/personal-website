@@ -9,7 +9,8 @@
     n.classList.toggle("hidden")
     pdf.html(n, {
         callback: function () {
-            window.open(pdf.output('bloburl'));
+            pdf.save("Resume")
+            // window.open(pdf.output('bloburl'));
             n.classList.toggle("hidden")
         },
         html2canvas: {
