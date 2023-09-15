@@ -12,7 +12,7 @@
   <h3>Work Experience</h3>
   {#each data as item}
     <div class="work-experience-item-header">
-      <h4><a href="{item.url}">{item.name}</a></h4><span>|</span><span>{formatDate(item.startDate)} - {formatDate(item.endDate)}</span>
+      <h4><a href="{item.url}" target="_blank">{item.name}</a></h4><span>|</span><span>{formatDate(item.startDate)} - {formatDate(item.endDate)}</span>
     </div>
     <p>{item.summary}</p>
     <ul>

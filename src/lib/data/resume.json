@@ -6,7 +6,7 @@
     "name": "Addison Beck",
     "email": "hello@addisonbeck.com",
     "phone": "(251) 377-8887",
-    "url": "addisonbeck.com",
+    "url": "https://addisonbeck.com",
     "summary": "I have spent 8 years working on a diverse array of engineering teams. Most of my professional experience has been in the Microsoft ecosystem writing C#, building for Azure cloud services using industry best practices like infrastructure as code and Kubernetes, and using modern front in technologies like Angular to deliver great user experiences. I love to pioneer new process and technology adoption at the places I work, and have a reputation for being someone that can be valuably innovative. I've been working remotely since early 2020, and have spent a good deal of time helping organizations successfully manage that evolution in how engineering teams do work. I have experience working on all sorts of team sizes from the smallest startup to large corporations, and enjoy the unique aspects of each shade.",
     "location": {
       "city": "Mobile",
@@ -16,7 +16,7 @@
     "profiles": [{
       "network": "Github",
       "username": "addisonbeck",
-      "url": "github.com/addisonbeck"
+      "url": "https://github.com/addisonbeck"
     }]
   },
   "work": [

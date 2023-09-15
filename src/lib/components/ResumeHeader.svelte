@@ -1,6 +1,9 @@
 <script lang="ts">
   import { Resume } from '$lib/data/Resume'
   export let data: typeof Resume.basics = Resume.basics;  
+
+  const email = data.email.replace("https://", "")
+  const githubProfile = data.profiles[0].url.replace("https://", "")
 </script>
 
 <div class="resume-header-container">
@@ -8,9 +11,9 @@
     <h1>{data.name}</h1>
   </div>
   <div class="contact-information">
-    <p>{data.email}</p>
-    <p>{data.url}</p>
-    <p>{data.profiles[0].url}</p>
+    <a href="mailto:{data.email}">{email}</a>
+    <a href="/" target="_blank">{data.url}</a>
+    <a href="{data.profiles[0].url}" target="_blank">{githubProfile}</a>
     <p>{data.phone}</p>
   </div>
 </div>
@@ -29,6 +32,7 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 2px;
+    align-items: center;
   }
 
   .resume-header-container .contact-information * {

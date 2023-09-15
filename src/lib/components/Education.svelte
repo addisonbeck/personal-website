@@ -12,6 +12,6 @@
   <h3>Education</h3>
   {#each data as item}
     <h4>{item.studyType} {item.area}</h4>
-    <div><a href="{item.url}">{item.institution}</a> - {formatDate(item.endDate)}</div>
+    <div><a href="{item.url}" target="_blank">{item.institution}</a> - {formatDate(item.endDate)}</div>
   {/each}
 </div>
