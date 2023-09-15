@@ -1,10 +1,10 @@
 <script lang="ts">
   import { Resume } from '$lib/data/Resume'
   export const data: typeof Resume.work = Resume.work;  
-  const t = new Intl.DateTimeFormat('en-GB', { month: "short", year: "numeric" })
 
   function formatDate(s: string) {
-    return t.format(Date.parse(s));
+    const dateFormat = new Intl.DateTimeFormat('en-GB', { month: "short", year: "numeric" })
+    return dateFormat.format(Date.parse(s));
   }
 </script>
 
