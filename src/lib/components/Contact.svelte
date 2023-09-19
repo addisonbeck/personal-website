@@ -1,8 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
   import email from '$lib/data/Email'
-  let message = email;
-  const messages = [
+  import name from '$lib/data/Name'
+
+  let username: string = email.username;
+  $: message = `${username}@${email.domain}`
+
+  const usernames = [
     'hi',
     'olleh',
     'howdy',
@@ -19,19 +23,19 @@
 
   onMount(() => {
 		setInterval(() => {
-      message = messages[messages.indexOf(message) + 1]  ?? email;
+      username = usernames[usernames.indexOf(username) + 1]  ?? email.username;
 		}, 1500);
   });
 </script>
 <svelte:head>
     <title>Contact | Addison Beck</title>
-    <meta name="description" content="You can reach Addison by email at hello@addisonbeck.com" />
+    <meta name="description" content="You can reach {name.first} by email at {message}" />
 </svelte:head>
 <div class="contact-container">
   <div class="contact-card">
     <span>Shoot me an email at </span>
-    <a href='mailto:${message}@addisonbeck.com'>
-      {message}@addisonbeck.com
+    <a href='{message}'>
+      {message}
     </a>
   </div>
 </div>
