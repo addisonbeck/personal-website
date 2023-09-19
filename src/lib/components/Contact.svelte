@@ -28,7 +28,7 @@
   });
 </script>
 <svelte:head>
-    <title>Contact | Addison Beck</title>
+    <title>Contact | {name.full}</title>
     <meta name="description" content="You can reach {name.first} by email at {message}" />
 </svelte:head>
 <div class="contact-container">
