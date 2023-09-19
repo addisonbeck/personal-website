@@ -6,6 +6,9 @@ const name: Name = {
   get full(): string {
     return `${name.first} ${name.last}`;
   },
+  get asUsername() {
+    return `${name.first}${name.last}`.toLocaleLowerCase(); 
+  },
   get initials(): string {
     return `${name.first.charAt(0)}${name.last.charAt(0)}`
   }

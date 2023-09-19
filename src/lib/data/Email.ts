@@ -1,7 +1,9 @@
 import type Email from "$lib/types/Email"
+import urls from "$lib/data/Urls"
+
 const email: Email = {
   username: "hello",
-  domain: "addisonbeck.com",
+  domain: urls.website.domain,
   get full(): string {
     return `${email.username}@${email.domain}`;
   }
