@@ -1,9 +1,9 @@
 <script lang="ts">
   export let title: { large: string, small: string, href: string } | null = { large: "ADDISON BECK", small: "AB:", href: "/" };
   export let sections: { title: string, href: string }[] =  [
-    // { title: "about", href: "about" },
-    { title: "resume", href: "resume" },
-    { title: "contact", href: "contact" },
+    // { title: "about", href: "/about" },
+    { title: "resume", href: "/resume" },
+    { title: "contact", href: "/contact" },
   ]
   export let allCaps: boolean = true;
 </script>
