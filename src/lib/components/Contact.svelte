@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
-  let message = 'hi';
+  import email from '$lib/data/Email'
+  let message = email;
   const messages = [
     'hi',
-    'hello',
     'olleh',
     'howdy',
     '您好',
@@ -19,7 +19,7 @@
 
   onMount(() => {
 		setInterval(() => {
-      message = messages[messages.indexOf(message) + 1]  ?? messages[0];
+      message = messages[messages.indexOf(message) + 1]  ?? email;
 		}, 1500);
   });
 </script>

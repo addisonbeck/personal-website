@@ -3,22 +3,11 @@
   --download-button-color: var(--accent);
 }
 
-
-
-.web-header {
-  grid-column: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  justify-items: center;
-  padding: 20px;
-  border-bottom: 1px dotted;
-}
-
-.web-header .download {
-  border-radius: 100px;
+.resume-pdf .download {
+  border-radius: 10px;
   display: grid;
   grid-auto-flow: column dense;
+  column-gap: 5px;
   justify-items: center;
   align-items: center;
   font-weight: 700;
@@ -28,10 +17,10 @@
   border: 1px;
   border-style: dashed;
   border-color: var(--download-button-color);
-  padding: 10px;
+  padding: 3px 10px 3px 10px;
 }
 
-.web-header .download:hover {
+.resume-pdf .download:hover {
   border-style: solid;
 }
 

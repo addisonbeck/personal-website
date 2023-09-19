@@ -1,20 +1,12 @@
 <script lang="ts">
-  import { Resume } from '$lib/data/Resume'
-  export let data: typeof Resume.basics = Resume.basics;  
-
-  const email = data.email.replace("https://", "")
-  const githubProfile = data.profiles[0].url.replace("https://", "")
+  import { basics } from '$lib/data/Resume'
 </script>
 
 <div class="resume-header-container">
   <div class="name">
-    <h1>{data.name}</h1>
+    <h1>{basics.name}</h1>
   </div>
   <div class="contact-information">
-    <a href="mailto:{data.email}">{email}</a>
-    <a href="/" target="_blank">{data.url}</a>
-    <a href="{data.profiles[0].url}" target="_blank">{githubProfile}</a>
-    <p>{data.phone}</p>
   </div>
 </div>
 

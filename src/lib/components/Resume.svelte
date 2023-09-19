@@ -1,19 +1,41 @@
 <script lang="ts">
-  import ResumePdf from "./ResumePdf.svelte"
-  import ResumeWeb from "./ResumeWeb.svelte"
+  import ResumeContent from "./ResumeContent.svelte"
+	import ResumeControls from "./ResumeControls.svelte";
+
+  export let mode: "json" | "html" = "json";
+  $: fileName = "resume." + mode;
+
+  function toggleMode() {
+    mode = mode === "json" ? "html" : "json";
+  }
 </script>
 <svelte:head>
     <title>Resume | Addison Beck</title>
     <meta name="description" content="Addison Beck is a software engineer with almost a decade in the field. Addison has worked on teams small and large, and loves OSS." />
 </svelte:head>
-<div class="resume-container">
-  <ResumePdf/>
-  <ResumeWeb/>
+<div class="resume-container-outer">
+  <div class="resume-container-inner">
+    <div class="resume-controls">
+      <ResumeControls on:toggleMode="{toggleMode}" bind:fileName="{fileName}"/>
+    </div>
+    <div class="resume-content">
+      <ResumeContent bind:mode="{mode}"/>
+    </div>
+  </div>
 </div>
 
 <style>
-  .resume-container {
+  .resume-container-outer {
     display: grid;
-    grid-template-columns: 1fr minmax(320px, 1000px) 1fr;
+    grid-template-columns: 1fr minmax(300px, 1000px) 1fr;
+    padding: 10px;
+  }
+
+  .resume-container-inner {
+    grid-column: 2;
+    border: 1px solid;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr;
   }
 </style>
