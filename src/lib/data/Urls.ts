@@ -3,7 +3,8 @@ import type UrlList from "$lib/types/UrlList";
 
 const urls: UrlList = {
   website: new Url("My Personal Website","addisonbeck.com","https://"),
-  github: new Url("My Github Profile","github.com/addisonbeck","https://"),
+  githubProfile: new Url("My Github Profile","github.com/addisonbeck","https://"),
+  githubProjectRepo: new Url("The Github Repo For This Project","github.com/addisonbeck/personal-website","https://"),
   skykick: new Url("Skykick", "skykick.com","https://"),
   bitwarden: new Url("Bitwarden","bitwarden.com","https://"),
   ssi: new Url("SSI","thessigroup.com","https://"),

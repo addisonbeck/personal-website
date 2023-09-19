@@ -5,6 +5,9 @@ const name: Name = {
   last: "Beck",
   get full(): string {
     return `${name.first} ${name.last}`;
+  },
+  get initials(): string {
+    return `${name.first.charAt(0)}${name.last.charAt(0)}`
   }
 }
 

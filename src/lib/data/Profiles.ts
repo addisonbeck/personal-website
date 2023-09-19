@@ -4,7 +4,7 @@ import urls from "./Urls";
 const profiles: ProfileList = {
   github: {
     network: 'github',
-    url: urls.github,
+    url: urls.githubProfile,
     username: "addisonbeck"
   }
 };

@@ -1,6 +1,7 @@
 type UrlKey = 
   'website'|
-  'github' | 
+  'githubProfile' | 
+  'githubProjectRepo' | 
   'skykick' |
   'bitwarden' |
   'ssi' |

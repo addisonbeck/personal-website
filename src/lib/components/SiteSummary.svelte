@@ -1,10 +1,12 @@
 <script lang="ts">
   import SiteTools from './SiteTools.svelte'
+  import name from '$lib/data/Name'
+  import urls from '$lib/data/Urls'
 </script>
 
 <div class="site-summary">
   <div class="site-summary-heading">
-    <h2>Hi, I'm Addison</h2>
+    <h2>Hi, I'm {name.first}</h2>
   </div>
   <div class="site-summary-body">
     <p>
@@ -14,7 +16,7 @@
     </p>
     <SiteTools />
     <p>
-      You can check out the source code on <a href="https://github.com/addisonbeck/personal-website" target="_blank">GitHub</a>. 
+      You can check out the source code on <a href="{urls.githubProjectRepo.full}" target="_blank">GitHub</a>. 
       PR's are welcome 🤠
     </p>
     <p>

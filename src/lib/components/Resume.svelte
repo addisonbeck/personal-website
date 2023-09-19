@@ -1,6 +1,7 @@
 <script lang="ts">
   import ResumeContent from "./ResumeContent.svelte"
 	import ResumeControls from "./ResumeControls.svelte";
+  import name from "$lib/data/Name"
 
   export let mode: "json" | "html" = "json";
   $: fileName = "resume." + mode;
@@ -10,8 +11,8 @@
   }
 </script>
 <svelte:head>
-    <title>Resume | Addison Beck</title>
-    <meta name="description" content="Addison Beck is a software engineer with almost a decade in the field. Addison has worked on teams small and large, and loves OSS." />
+    <title>Resume | {name.full}</title>
+    <meta name="description" content="{name.full} is a software engineer with almost a decade in the field. {name.first} has worked on teams small and large, and loves OSS." />
 </svelte:head>
 <div class="resume-container-outer">
   <div class="resume-container-inner">

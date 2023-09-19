@@ -1,9 +1,10 @@
 <script lang="ts">
   import SiteSummary from './SiteSummary.svelte'
-  const description = "Addison Beck is a software engineer with a decade of experience. He is also a partner, father, home cook, and Mothman fan."
+  import name from '$lib/data/Name'
+  const description = `${name.full} is a software engineer with a decade of experience. He is also a partner, father, home cook, and Mothman fan.`
 </script>
 <svelte:head>
-    <title>Addison Beck</title>
+    <title>{name.full}</title>
     <meta name="description" content={description} />
 </svelte:head>
 <div class="home-container">

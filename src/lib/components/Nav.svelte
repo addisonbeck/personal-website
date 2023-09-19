@@ -1,10 +1,22 @@
 <script lang="ts">
-  export let title: { large: string, small: string, href: string } | null = { large: "ADDISON BECK", small: "AB:", href: "/" };
+  import name from "$lib/data/Name"
+
+  export let title: { 
+    large: string,
+    small: string,
+    href: string 
+  } | null = { 
+    large: name.full.toLocaleUpperCase(),
+    small: `${name.initials.toLocaleUpperCase()}:`,
+    href: "/" 
+    };
+
   export let sections: { title: string, href: string }[] =  [
     // { title: "about", href: "/about" },
     { title: "resume", href: "/resume" },
     { title: "contact", href: "/contact" },
   ]
+
   export let allCaps: boolean = true;
 </script>
 
