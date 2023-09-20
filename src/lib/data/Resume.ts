@@ -94,6 +94,7 @@ const resume: Resume = {
   }
 }
 
+export default resume;
 export const properties = resume.properties;
 export const basics = resume.properties.basics;
 export const education = resume.properties.education;

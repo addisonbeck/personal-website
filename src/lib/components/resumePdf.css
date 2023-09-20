@@ -3,27 +3,6 @@
   --download-button-color: var(--accent);
 }
 
-.resume-pdf .download {
-  border-radius: 10px;
-  display: grid;
-  grid-auto-flow: column dense;
-  column-gap: 5px;
-  justify-items: center;
-  align-items: center;
-  font-weight: 700;
-  font-size: 0.8em;
-  background-color: var(--download-button-background-color);
-  color: var(--download-button-color);
-  border: 1px;
-  border-style: dashed;
-  border-color: var(--download-button-color);
-  padding: 3px 10px 3px 10px;
-}
-
-.resume-pdf .download:hover {
-  border-style: solid;
-}
-
 .pdf.resume {
   display: none;
   width: 500px;

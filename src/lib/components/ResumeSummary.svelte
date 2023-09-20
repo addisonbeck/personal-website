@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { basics } from '$lib/data/Resume';
+	import type { Basics } from '$lib/types/Resume';
+
+  export let data: Basics;
 </script>
 
 <div class="resume-summary-container">
-  <p>{basics.summary}</p>
+  <p>{data.summary}</p>
 </div>

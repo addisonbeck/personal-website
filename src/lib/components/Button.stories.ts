@@ -1,14 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import ResumeWeb from './ResumeWeb.svelte';
+import Button from './Button.svelte';
 
 const meta = {
-  title: 'Components/Resume/Web',
-  component: ResumeWeb,
+  title: 'Controls/Button',
+  component: Button,
   tags: ['autodocs'],
-} satisfies Meta<ResumeWeb>;
+} satisfies Meta<Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+};
+
+export const Round: Story = {
+  args: {
+    type: "round"
+  }
 };

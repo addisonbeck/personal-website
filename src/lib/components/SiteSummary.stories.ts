@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import SiteSummary from './SiteSummary.svelte';
 
 const meta = {
-  title: 'Home/Site Summary',
+  title: 'Components/Home/Site Summary',
   component: SiteSummary,
   tags: ['autodocs'],
 } satisfies Meta<SiteSummary>;

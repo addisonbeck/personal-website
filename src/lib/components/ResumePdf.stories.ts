@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import ResumePdf from './ResumePdf.svelte';
 
 const meta = {
-  title: 'Resume/PDF Download',
+  title: 'Controls/Button/Resume Download',
   component: ResumePdf,
   tags: ['autodocs'],
 } satisfies Meta<ResumePdf>;

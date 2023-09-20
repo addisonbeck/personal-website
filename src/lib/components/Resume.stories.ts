@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Resume from './Resume.svelte';
 
 const meta = {
-  title: 'Resume',
+  title: 'Components/Resume',
   component: Resume,
   tags: ['autodocs'],
   parameters: {

@@ -1,20 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import ResumeContent from './ResumeContent.svelte';
+import EditorControls from './EditorControls.svelte';
 
 const meta = {
-  title: 'Components/Resume/Content',
-  component: ResumeContent,
+  title: 'Controls/Editor/Controls',
+  component: EditorControls,
   tags: ['autodocs'],
-} satisfies Meta<ResumeContent>;
+} satisfies Meta<EditorControls>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-};
-
-export const Web: Story = {
   args: {
-    mode: "web"
+    title: "editor-title"
   }
 };

@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { work } from '$lib/data/Resume'
+	import type { Work } from '$lib/types/Resume';
+
+  export let data: Work;
 
   function formatDate(s: string) {
     const dateFormat = new Intl.DateTimeFormat('en-GB', { month: "short", year: "numeric" })
@@ -9,7 +11,7 @@
 
 <div class="resume-work-experience-container">
   <h3>Work Experience</h3>
-  {#each work as item}
+  {#each data as item}
     <div class="work-experience-item-header">
       <h4><a href="{item.url}" target="_blank">{item.name}</a></h4><span>|</span><span>{formatDate(item.startDate)} - {formatDate(item.endDate)}</span>
     </div>

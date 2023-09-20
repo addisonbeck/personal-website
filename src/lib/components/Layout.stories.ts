@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Layout from './Layout.svelte';
 
 const meta = {
-  title: 'Layout',
+  title: 'Components/Layout',
   component: Layout,
   tags: ['autodocs'],
   parameters: {

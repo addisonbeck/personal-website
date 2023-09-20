@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Nav from './Nav.svelte';
 
 const meta = {
-  title: 'Layout/Header/Nav',
+  title: 'Components/Layout/Header/Nav',
   component: Nav,
   tags: ['autodocs'],
 } satisfies Meta<Nav>;

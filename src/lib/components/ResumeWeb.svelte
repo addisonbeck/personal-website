@@ -1,14 +1,8 @@
 <script lang="ts">
+	import type { Resume } from "$lib/types/Resume";
   import ResumeSections from "./ResumeSections.svelte"
+  export let data: Resume;
 </script>
 <div id="resume" class="resume">
-  <ResumeSections/>
+  <ResumeSections bind:data={data}/>
 </div>
-<style>
-  .resume {
-    grid-column: 2;
-    display: grid;
-    grid-auto-flow: row;
-    padding: 10px;
-  }
-</style>

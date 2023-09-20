@@ -1,11 +1,13 @@
 <script lang="ts">
-  import { skills } from '$lib/data/Resume'
+	import type { Skills } from '$lib/types/Resume';
+
+  export let data: Skills;
 </script>
 
 <div class="resume-summary-container">
   <h3>Skills</h3>
   <ul>
-    {#each skills as item}
+    {#each data as item}
       <li>{item.name}</li>
     {/each}
   </ul>

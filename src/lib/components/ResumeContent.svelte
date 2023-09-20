@@ -1,28 +1,20 @@
 <script lang="ts">
-  import ResumeJson from "./ResumeJson.svelte"
 	import ResumeWeb from "./ResumeWeb.svelte";
+	import EditorCode from "./EditorCode.svelte";
+	import type { Resume } from "$lib/types/Resume";
+
+  export let data: Resume;
   export let mode: "json" | "html" = "json";
-
+  $: resumeJsonStringArray = data.toJson().split("\n");
 </script>
-<div class="resume-content-container">
-  {#if mode === "json"}
-    <div class="resume-json">
-      <ResumeJson/>
-    </div>
-  {/if}
-  {#if mode === "html"}
-    <div class="resume-web">
-      <ResumeWeb/>
-    </div>
-  {/if}
-</div>
-<style>
-  .resume-content-container {
-    display: grid;
-    grid-template-columns: 1fr minmax(300px, 1000px) 1fr;
-  }
 
-  .resume-json, .resume-web {
-    grid-column: 2
-  }
-</style>
+{#if mode === "json"}
+  <div class="resume-json">
+    <EditorCode bind:data={resumeJsonStringArray}/>
+  </div>
+{/if}
+{#if mode === "html"}
+  <div class="resume-web">
+    <ResumeWeb bind:data={data}/>
+  </div>
+{/if}

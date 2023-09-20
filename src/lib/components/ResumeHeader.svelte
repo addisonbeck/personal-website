@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { basics } from '$lib/data/Resume'
+	import type { Basics } from '$lib/types/Resume';
+
+  export let data: Basics;
 </script>
 
 <div class="resume-header-container">
   <div class="name">
-    <h1>{basics.name}</h1>
+    <h1>{data.name}</h1>
   </div>
   <div class="contact-information">
   </div>

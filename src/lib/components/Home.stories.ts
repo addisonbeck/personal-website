@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Home from './Home.svelte';
 
 const meta = {
-  title: 'Home',
+  title: 'Components/Home',
   component: Home,
   tags: ['autodocs'],
   parameters: {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import ThemeToggle from './ThemeToggle.svelte';
 
 const meta = {
-  title: 'Layout/Header/Theme Toggle',
+  title: 'Controls/Button/Theme Toggle',
   component: ThemeToggle,
   tags: ['autodocs'],
 } satisfies Meta<ThemeToggle>;

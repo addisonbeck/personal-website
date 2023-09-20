@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Contact from './Contact.svelte';
 
 const meta = {
-  title: 'Contact',
+  title: 'Components/Contact',
   component: Contact,
   tags: ['autodocs'],
 } satisfies Meta<Contact>;
