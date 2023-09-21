@@ -2,6 +2,7 @@
 	import type { Basics } from '$lib/types/Resume';
 
   export let data: Basics;
+  const githubProfile = data?.profiles?.filter(x => x.url?.includes("github")).pop()?.url?.replace("https://", "")
 </script>
 
 {#if data?.name}
@@ -10,6 +11,18 @@
       <h1>{data.name}</h1>
     </div>
     <div class="contact-information">
+      {#if data.email}
+        <a href="mailto:{data.email}">{data.email}</a>
+      {/if}
+      {#if data.url}
+        <a href="/" target="_blank">{data.url}</a>
+      {/if}
+      {#if githubProfile}
+        <a href="https://{githubProfile}" target="_blank">{githubProfile}</a>
+      {/if}
+      {#if data.phone}
+        <span>{data.phone}</span>
+      {/if}
     </div>
   </div>
 {/if}
@@ -24,26 +37,16 @@
     text-align: center;
   }
 
-  .resume-header-container .contact-information {
+  .contact-information {
     display: grid;
     grid-auto-flow: column;
     column-gap: 2px;
     align-items: center;
   }
 
-  .resume-header-container .contact-information * {
+  .contact-information * {
     border-left: 1px solid;
     text-align: center;
   }
 
-  @media screen and (max-width: 500px) {
-    .resume:not(#pdf) .resume-header-container .contact-information {
-      grid-auto-flow: row;
-    }
-
-    .resume:not(#pdf) .resume-header-container .contact-information * {
-      border-left: 0;
-      text-align: center;
-    }
-  }
 </style>

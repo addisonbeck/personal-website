@@ -1,8 +1,3 @@
-* {
-  --download-button-background-color: var(--primary);
-  --download-button-color: var(--accent);
-}
-
 .pdf.resume {
   display: none;
   width: 500px;
@@ -21,4 +16,16 @@
   padding-bottom: 5px;
   border-bottom: 1px dotted;
   width: 70%;
+}
+
+@media screen and (max-width: 800px) {
+  .resume:not(.pdf) .contact-information {
+    grid-auto-flow: row;
+    row-gap: 20px;
+  }
+
+  .resume:not(.pdf) .contact-information * {
+    border-left: 0;
+    text-align: center;
+  }
 }
