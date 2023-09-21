@@ -9,22 +9,43 @@
   }
 </script>
 
-<div class="resume-work-experience-container">
-  <h3>Work Experience</h3>
-  {#each data as item}
-    <div class="work-experience-item-header">
-      <h4><a href="{item.url}" target="_blank">{item.name}</a></h4><span>|</span><span>{formatDate(item.startDate)} - {formatDate(item.endDate)}</span>
-    </div>
-    <p>{item.summary}</p>
-    <ul>
-      {#if typeof item.highlights != undefined}
-        {#each item.highlights as highlight}
-          <li>{highlight}</li>
-        {/each}
+{#if data && data[0]}
+  <div class="resume-work-experience-container">
+    <h3>Work Experience</h3>
+    {#each data as item}
+      {#if item.name}
+        <div class="work-experience-item-header">
+          <h4>
+            {#if item.url}
+              <a href="{item.url}" target="_blank">
+                {item.name}
+              </a>
+            {:else}
+              {item.name}
+            {/if}
+          </h4>
+          {#if item.startDate && item.endDate}
+            <span>|</span>
+            <span>
+              {formatDate(item.startDate)} 
+              - {formatDate(item.endDate)}
+            </span>
+          {/if}
+        </div>
+        {#if item.summary}
+          <p>{item.summary}</p>
+        {/if}
+        {#if item.highlights && item.highlights[0]}
+          <ul>
+            {#each item.highlights as highlight}
+              <li>{highlight}</li>
+            {/each}
+          </ul>
+        {/if}
       {/if}
-    </ul>
-  {/each}
-</div>
+    {/each}
+  </div>
+{/if}
 
 <style>
   .work-experience-item-header {

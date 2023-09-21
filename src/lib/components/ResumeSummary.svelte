@@ -4,6 +4,8 @@
   export let data: Basics;
 </script>
 
-<div class="resume-summary-container">
-  <p>{data.summary}</p>
-</div>
+{#if data?.summary}
+  <div class="resume-summary-container">
+    <p>{data.summary}</p>
+  </div>
+{/if}

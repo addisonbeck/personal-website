@@ -1,20 +1,28 @@
 <script lang="ts">
 	import ResumeWeb from "./ResumeWeb.svelte";
-	import type { Resume } from "$lib/types/Resume";
+	import type { Resume, ResumeProperties } from "$lib/types/Resume";
 	import BlobEditor from "./BlobEditor.svelte";
 
   export let data: Resume;
+  const originalData = data;
+  
   export let mode: "json" | "html" = "json";
-  $: resumeJson = data.toJson();
+
+  $: resumeJson = originalData.toJson();
+  $: { 
+    let temp: ResumeProperties;
+    try {
+      temp = JSON.parse(resumeJson);
+    } catch {
+      temp = data.properties;
+    }
+    data.properties = <ResumeProperties>temp;
+  };
 </script>
 
-{#if mode === "json"}
-  <div class="resume-json">
-    <BlobEditor bind:value={resumeJson}></BlobEditor>
-  </div>
-{/if}
-{#if mode === "html"}
-  <div class="resume-web">
-    <ResumeWeb bind:data={data}/>
-  </div>
-{/if}
+<div class="resume-json" hidden={mode != "json"}>
+  <BlobEditor bind:value={resumeJson}></BlobEditor>
+</div>
+<div class="resume-web" hidden={mode != "html"}>
+  <ResumeWeb bind:data={data}/>
+</div>

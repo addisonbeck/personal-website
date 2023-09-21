@@ -10,10 +10,6 @@
 
   export let mode: "json" | "html" = "json";
   $: fileName = "resume." + mode;
-
-  function toggleMode() {
-    mode = mode === "json" ? "html" : "json";
-  }
 </script>
 
 <svelte:head>
@@ -24,8 +20,10 @@
 <div class="resume-container-outer">
   <div class="resume-container-inner">
     <Editor bind:title={fileName}>
-      <ResumeControls slot="controls" on:toggleMode={toggleMode} bind:resume={data}/>
-      <ResumeContent slot="content" bind:mode={mode} bind:data={data}/>
+      <ResumeControls bind:mode slot="controls" bind:resume={data}/>
+      <div class="resume-content" slot="content">
+        <ResumeContent bind:mode bind:data/>
+      </div>
     </Editor>
   </div>
 </div>
@@ -41,5 +39,10 @@
     grid-column: 2;
     display: grid;
     grid-template-rows: auto 1fr;
+  }
+
+  .resume-content {
+    max-height: 700px;
+    overflow: auto;
   }
 </style>

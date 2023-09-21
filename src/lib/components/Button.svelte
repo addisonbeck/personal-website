@@ -40,6 +40,7 @@
     border-style: dashed;
     border-color: var(--button-color);
     padding: 3px 10px 3px 5px;
+    column-gap: 5px;
   }
 
   .button.round {

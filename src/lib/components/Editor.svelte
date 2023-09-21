@@ -19,6 +19,6 @@
   .editor-container {
     border: 1px solid;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 </style>

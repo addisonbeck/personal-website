@@ -4,13 +4,15 @@
   export let data: Basics;
 </script>
 
-<div class="resume-header-container">
-  <div class="name">
-    <h1>{data.name}</h1>
+{#if data?.name}
+  <div class="resume-header-container">
+    <div class="name">
+      <h1>{data.name}</h1>
+    </div>
+    <div class="contact-information">
+    </div>
   </div>
-  <div class="contact-information">
-  </div>
-</div>
+{/if}
 
 <style>
   .resume-header-container {

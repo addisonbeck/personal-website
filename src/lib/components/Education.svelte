@@ -3,19 +3,38 @@
 
   export let data: Education;
 
-  function formatDate(s?: string) {
+  function formatDate(s?: string, addSpace: boolean = false) {
     if (s == null) {
       return null;
     }
     const dateFormat = new Intl.DateTimeFormat('en-GB', { year: "numeric" })
-    return ` - ${dateFormat.format(Date.parse(s))}`;
+    let output = dateFormat.format(Date.parse(s));
+    if (addSpace) {
+      output = ' - ' + s;
+    }
+    return output;
   }
 </script>
 
-<div class="education-container">
-  <h3>Education</h3>
-  {#each data as item}
-    <h4>{item.studyType} {item.area}</h4>
-    <div><a href="{item.url}" target="_blank">{item.institution}</a>{formatDate(item.endDate)}</div>
-  {/each}
-</div>
+{#if data && data[0]}
+  <div class="education-container">
+    <h3>Education</h3>
+    {#each data as item}
+      {#if item.studyType && item.area}
+        <h4>{item.studyType} {item.area}</h4>
+        <div>
+          {#if item.institution}
+            {#if item.url}
+              <a href="{item.url}" target="_blank">{item.institution}</a>
+            {:else}
+              {item.institution}
+            {/if}
+          {/if}
+          {#if item.endDate}
+            {formatDate(item.endDate, item.institution != null)}
+          {/if}
+        </div>
+      {/if}
+    {/each}
+  </div>
+{/if}
