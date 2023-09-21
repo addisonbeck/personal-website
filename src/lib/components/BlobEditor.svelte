@@ -4,7 +4,7 @@
     import { json } from "@codemirror/lang-json";
     import {keymap, dropCursor, crosshairCursor, lineNumbers, highlightSpecialChars, rectangularSelection, drawSelection } from "@codemirror/view";
     import type { Extension } from "@codemirror/state"
-    import { indentOnInput, foldGutter, foldKeymap, syntaxHighlighting, defaultHighlightStyle } from "@codemirror/language"
+    import { indentOnInput, foldGutter, foldKeymap } from "@codemirror/language"
     import {defaultKeymap, history, historyKeymap} from "@codemirror/commands"
     import {searchKeymap } from "@codemirror/search"
     import {autocompletion, completionKeymap, closeBrackets, closeBracketsKeymap} from "@codemirror/autocomplete"
