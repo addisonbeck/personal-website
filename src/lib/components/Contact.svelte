@@ -34,7 +34,7 @@
 <div class="contact-container">
   <div class="contact-card">
     <span>Shoot me an email at </span>
-    <a href='{message}'>
+    <a href='mailto:{message}'>
       {message}
     </a>
   </div>
