@@ -1,7 +1,4 @@
 <script lang="ts">
-  import Editor from "./Editor.svelte"
-  import ResumeContent from "./ResumeContent.svelte"
-	import ResumeControls from "./ResumeControls.svelte";
   import name from "$lib/data/Name"
   import resume from "$lib/data/Resume"
 	import type { Resume } from "$lib/types/Resume";
@@ -10,6 +7,14 @@
 
   export let mode: "json" | "html" = "json";
   $: fileName = "resume." + mode;
+
+  const loadEditor = async () => {
+    const editor = (await import('./Editor.svelte')).default;
+    const controls = (await import('./ResumeControls.svelte')).default;
+    const content = (await import('./ResumeContent.svelte')).default;
+
+    return { editor, controls, content };
+  }
 </script>
 
 <svelte:head>
@@ -19,12 +24,14 @@
 
 <div class="resume-container-outer">
   <div class="resume-container-inner">
-    <Editor bind:title={fileName}>
-      <ResumeControls bind:mode slot="controls" bind:resume={data}/>
-      <div class="resume-content" slot="content">
-        <ResumeContent bind:mode bind:data/>
-      </div>
-    </Editor>
+    {#await loadEditor() then Editor}
+      <Editor.editor bind:title={fileName}>
+        <Editor.controls bind:mode slot="controls" bind:resume={data}/>
+        <div class="resume-content" slot="content">
+          <Editor.content bind:mode bind:data/>
+        </div>
+      </Editor.editor>
+    {/await}
   </div>
 </div>
 
