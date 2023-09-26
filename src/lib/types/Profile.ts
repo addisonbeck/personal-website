@@ -1,9 +1,9 @@
-import type Url from "./Url";
+import type Url from './Url';
 
 type Profile = {
-  network: string,
-  username: string,
-  url: Url,
+	network: string;
+	username: string;
+	url: Url;
 };
 
 export default Profile;

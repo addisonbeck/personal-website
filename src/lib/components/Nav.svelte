@@ -17,7 +17,7 @@
     { title: "contact", href: "/contact" },
   ]
 
-  export let allCaps: boolean = true;
+  export let allCaps = true;
 </script>
 
 <nav class="nav">

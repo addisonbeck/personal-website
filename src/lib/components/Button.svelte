@@ -2,8 +2,8 @@
 	import { createEventDispatcher } from 'svelte';
   const slots = $$props.$$slots;
 
-  export let id: string = "button";
-  export let type: string = "default"
+  export let id = "button";
+  export let type = "default"
 
 	const dispatch = createEventDispatcher();
 

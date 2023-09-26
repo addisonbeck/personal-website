@@ -3,6 +3,3 @@
 # Personal Website
 
 Welcome! This is the codebase and deployment pipeline that run [addisonbeck.com](https://addisonbeck.com). It's written using SvelteKit and is configured to generate a static website.
-
-
-

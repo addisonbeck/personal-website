@@ -1,6 +1,3 @@
-type DegreeKey = 
-  'usa'
+type DegreeKey = 'usa';
 
 export default DegreeKey;
-
-

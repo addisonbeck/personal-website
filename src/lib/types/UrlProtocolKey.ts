@@ -1,7 +1,3 @@
-type UrlProtocolKey = 
-  'https://'|
-  'https://www.'
+type UrlProtocolKey = 'https://' | 'https://www.';
 
 export default UrlProtocolKey;
-
-

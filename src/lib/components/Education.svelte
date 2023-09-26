@@ -3,7 +3,7 @@
 
   export let data: Education;
 
-  function formatDate(s?: string, addSpace: boolean = false) {
+  function formatDate(s?: string, addSpace = false) {
     if (s == null) {
       return null;
     }

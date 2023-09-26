@@ -1,6 +1,3 @@
-type ProfileKey = 
-  'github';
+type ProfileKey = 'github';
 
 export default ProfileKey;
-
-

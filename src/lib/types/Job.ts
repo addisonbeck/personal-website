@@ -1,12 +1,12 @@
-import type Url from "./Url";
+import type Url from './Url';
 
 type Job = {
-  name: string,
-  position: string,
-  url: Url,
-  startDate: string,
-  endDate: string,
-  summary: string,
-  highlights: string[]
-}
+	name: string;
+	position: string;
+	url: Url;
+	startDate: string;
+	endDate: string;
+	summary: string;
+	highlights: string[];
+};
 export default Job;
