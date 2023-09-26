@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "./resumeHeader.css";
 	import type { Basics } from '$lib/types/Resume';
 
   export let data: Basics;
@@ -26,27 +27,3 @@
     </div>
   </div>
 {/if}
-
-<style>
-  .resume-header-container {
-    display: grid;
-    grid-auto-flow: row dense;
-  }
-
-  .resume-header-container .name {
-    text-align: center;
-  }
-
-  .contact-information {
-    display: grid;
-    grid-auto-flow: column;
-    column-gap: 2px;
-    align-items: center;
-  }
-
-  .contact-information * {
-    border-left: 1px solid;
-    text-align: center;
-  }
-
-</style>
