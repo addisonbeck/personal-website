@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
+import name from "../src/lib/data/Name";
 
-test('index page has expected h1', async ({ page }) => {
-	await page.goto('/');
-	await expect(page.getByRole('heading', { name: 'Hi Emily!' })).toBeVisible();
+test('has title', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle(new RegExp(`${name.full}`));
 });
