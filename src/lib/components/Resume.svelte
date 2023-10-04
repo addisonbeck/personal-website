@@ -1,7 +1,7 @@
 <script lang="ts">
   import name from "$lib/data/Name"
   import resume from "$lib/data/Resume"
-	import type { Resume } from "$lib/types/Resume";
+	import type Resume from "$lib/types/Resume";
 
   let data: Resume = resume;
 

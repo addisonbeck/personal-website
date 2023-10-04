@@ -1,11 +1,12 @@
 import type {
 	Education as ResumeEducation,
 	Profiles as ResumeProfiles,
-	Resume,
 	ResumeProperties,
 	Skills as ResumeSkills,
 	Work as ResumeJobs
 } from '$lib/types/Resume';
+
+import Resume from '$lib/types/Resume';
 
 import type DegreeKey from '$lib/types/DegreeKey';
 import type JobKey from '$lib/types/JobKey';
@@ -87,12 +88,7 @@ const props: ResumeProperties = {
 	education: buildEducation()
 };
 
-const resume: Resume = {
-	properties: props,
-	toJson: () => {
-		return JSON.stringify(properties, undefined, 2);
-	}
-};
+const resume = new Resume(props); 
 
 export default resume;
 export const properties = resume.properties;

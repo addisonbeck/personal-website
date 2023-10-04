@@ -3,9 +3,16 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
 	plugins: [sveltekit()],
+  server: {
+    port: 3000
+  },
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}'],
-    environment: 'happy-dom'
+    environment: 'happy-dom',
+    alias: [{ find: /^svelte$/, replacement: 'svelte/internal' }],
+    api: {
+      port: 3001
+    }
 	},
 	optimizeDeps: {
 		exclude: [

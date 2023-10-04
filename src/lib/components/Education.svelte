@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Education } from '$lib/types/Resume';
 
-  export let data: Education;
+  export let data: Education | undefined;
 
   function formatDate(s?: string, addSpace = false) {
     if (s == null) {

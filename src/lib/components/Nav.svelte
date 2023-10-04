@@ -1,35 +1,18 @@
 <script lang="ts">
-  import name from "$lib/data/Name"
-
-  export let title: { 
-    large: string,
-    small: string,
-    href: string 
-  } | null = { 
-    large: name.full.toLocaleUpperCase(),
-    small: `${name.initials.toLocaleUpperCase()}:`,
-    href: "/" 
-    };
-
-  export let sections: { title: string, href: string }[] =  [
-    // { title: "about", href: "/about" },
-    { title: "resume", href: "/resume" },
-    { title: "contact", href: "/contact" },
-  ]
-
+  import config from "$lib/data/Header"
   export let allCaps = true;
 </script>
 
 <nav class="nav">
-  {#if title?.large != null && title?.small != null}
+  {#if config?.title?.large != null && config?.title?.small != null}
     <div class="title">
-      <a class="title-link title-large" href="{title.href}">{title.large}</a>
-      <a class="title-link title-small" href="{title.href}">{title.small}</a>
+      <a class="title-link title-large" href="{config?.title.href}">{config?.title.large}</a>
+      <a class="title-link title-small" href="{config?.title.href}">{config?.title.small}</a>
     </div>
   {/if}
   <div class="sections">
-    {#if sections != null && sections.length > 0}
-      {#each sections as section}
+    {#if config?.sections != null && config?.sections.length > 0}
+      {#each config?.sections as section}
         <a class="section" class:uppercase={allCaps} href="{section.href}">{section.title}</a>
       {/each}
     {/if}

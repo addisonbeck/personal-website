@@ -4,13 +4,21 @@
     import { json } from "@codemirror/lang-json";
     import {keymap, dropCursor, crosshairCursor, lineNumbers, highlightSpecialChars, rectangularSelection, drawSelection } from "@codemirror/view";
     import type { Extension } from "@codemirror/state"
-    import { indentOnInput, foldGutter, foldKeymap } from "@codemirror/language"
+    import { indentOnInput, foldGutter, foldKeymap, LanguageSupport } from "@codemirror/language"
     import {defaultKeymap, history, historyKeymap} from "@codemirror/commands"
     import {searchKeymap } from "@codemirror/search"
     import {autocompletion, completionKeymap, closeBrackets, closeBracketsKeymap} from "@codemirror/autocomplete"
     import {lintKeymap} from "@codemirror/lint"
 
-    export let lang: typeof json = json;
+    type supportedLanguage = "json";
+
+    export let language: supportedLanguage = "json";
+
+    const langMap: Record<supportedLanguage, LanguageSupport> = {
+      "json": json()
+    };
+
+    $: lang = langMap[language];
 
     export let value = "";
 
@@ -42,4 +50,4 @@
     ];
 </script>
 
-<CodeMirror bind:value lang={lang()} basic={false} extensions={extensions}/>
+<CodeMirror bind:value lang={lang} basic={false} extensions={extensions}/>

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import name from "../src/lib/data/Name";
+import name from '../src/lib/data/Name';
 
 test('has title', async ({ page }) => {
   await page.goto('/');

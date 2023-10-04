@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Skills } from '$lib/types/Resume';
 
-  export let data: Skills;
+  export let data: Skills | undefined;
 </script>
 
 {#if data && data[0]}

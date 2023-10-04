@@ -1,41 +1,31 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
-  import email from '$lib/data/Email'
+  import { allEmails } from '$lib/data/Email'
   import name from '$lib/data/Name'
+	import type Email from '$lib/types/Email';
 
-  let username: string = email.username;
-  $: message = `${username}@${email.domain}`
+  export let messageOptions: Email[] = allEmails;
+  $: message = messageOptions[0];
 
-  const usernames = [
-    'hi',
-    'olleh',
-    'howdy',
-    '您好',
-    'salut',
-    'gutentag',
-    'السلام عليكم',
-    '0100100001101001',
-    'oi',
-    'こんにちは',
-    'please-work-here',
-    'or-pretty-much-anything',
-  ];
+  function shuffleMessage() {
+    message = messageOptions[messageOptions.indexOf(message) + 1] ?? messageOptions[0];
+  }
 
   onMount(() => {
 		setInterval(() => {
-      username = usernames[usernames.indexOf(username) + 1]  ?? email.username;
+      shuffleMessage();
 		}, 1500);
   });
 </script>
 <svelte:head>
     <title>Contact | {name.full}</title>
-    <meta name="description" content="You can reach {name.first} by email at {message}" />
+    <meta name="description" content="You can reach {name.first} by email at {message.full}" />
 </svelte:head>
 <div class="contact-container">
   <div class="contact-card">
     <span>Shoot me an email at </span>
-    <a href='mailto:{message}'>
-      {message}
+    <a data-testid="email-address" href='mailto:{message.full}'>
+      {message.full}
     </a>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Work } from '$lib/types/Resume';
 
-  export let data: Work;
+  export let data: Work | undefined;
 
   function formatDate(s: string) {
     const dateFormat = new Intl.DateTimeFormat('en-GB', { month: "short", year: "numeric" })

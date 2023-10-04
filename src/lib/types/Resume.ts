@@ -47,7 +47,12 @@ export type ResumeProperties = {
 	skills: Skills;
 };
 
-export type Resume = {
-	properties: ResumeProperties;
-	toJson: () => string;
+class Resume {
+  constructor(public properties?: ResumeProperties){}
+
+  public toJson(): string {
+		return JSON.stringify(this.properties, undefined, 2);
+  }
 };
+
+export default Resume;

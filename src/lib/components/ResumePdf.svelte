@@ -3,11 +3,11 @@
   import ResumeSections from "./ResumeSections.svelte"
   import Button from "./Button.svelte"
   import jsPDF from "jspdf"
-	import type { Resume } from '$lib/types/Resume';
+	import Resume from '$lib/types/Resume';
 
   export let action: "download" | "open" = "download";
 
-  export let data: Resume;
+  export let data: Resume = new Resume();
 
   function download() {
     const result = document.createElement('div');
