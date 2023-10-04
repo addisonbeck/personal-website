@@ -13,7 +13,7 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest --ui --coverage",
 		"storybook": "storybook dev -p 3002 --no-open",
-		"build-storybook": "storybook build"
+		"build:storybook": "storybook build"
 	},
 	"devDependencies": {
 		"@codemirror/lang-json": "^6.0.1",
