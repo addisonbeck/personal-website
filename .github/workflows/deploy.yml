@@ -27,3 +27,15 @@ jobs:
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 1
           overwrite: true
+      - run: npm run build:storybook
+      - name: deploy storybook
+        uses: appleboy/scp-action@v0.1.3
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USERNAME }}
+          key: ${{ secrets.DEPLOY_KEY_PRI }}
+          source: /storybook-static
+          target: ${{ secrets.DEPLOY_PATH_STORYBOOK }}
+          strip_components: 1
+          overwrite: true
+
