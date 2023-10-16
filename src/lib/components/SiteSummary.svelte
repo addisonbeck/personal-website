@@ -1,28 +1,10 @@
 <script lang="ts">
-  import SiteTools from './SiteTools.svelte'
   import name from '$lib/data/Name'
   import urls from '$lib/data/Urls'
-
-  async function load() {
-    const svelteLogo = await import(`$lib/assets/sveltelogo.svg?raw`);
-    const typescriptLogo = await import('$lib/assets/tslogo.svg?raw');
-    const htmlLogo = await import('$lib/assets/htmllogo.svg?raw');
-    const cssLogo = await import('$lib/assets/csslogo.svg?raw');
-    const doLogo = await import ('$lib/assets/dologo.svg?raw');
-    const storybookLogo = await import('$lib/assets/storybooklogo.svg?raw');
-    const tools: { title: string, href: string, purpose: string, svg: string}[] =  [
-      { title: "Svelte", href: "https://svelte.dev", purpose: "As a front-end component framework", svg: svelteLogo.default },
-      { title: "Typescript", href: "https://www.typescriptlang.org", purpose: "To make Javascript more fun to write", svg: typescriptLogo.default},
-      { title: "HTML", href: "https://html.spec.whatwg.org", purpose: "For obvious reasons", svg: htmlLogo.default},
-      { title: "CSS with CSS Grid", href: "https://www.w3schools.com/css/css_grid.asp", purpose: "Also for obvious reasons", svg: cssLogo.default},
-      { title: "Digital Ocean", href: "https://www.digitalocean.com/", purpose: "As a hosting platform", svg: doLogo.default},
-      { title: "Storybook", href: "https://storybook.js.org", purpose: "During development as a component library", svg: storybookLogo.default},
-    ]
-    return tools;
-  }
+  import SiteTools from './SiteTools.svelte'
 </script>
 <div class="site-summary">
-  {#await load() then tools}
+  {#await import('$lib/data/SiteTools') then tools}
     <div class="site-summary-heading">
       <h2>Hi, I'm {name.first}</h2>
     </div>
@@ -32,7 +14,7 @@
         I've written code used by millions of people.
         This site in particular is built using:
       </p>
-      <SiteTools {tools}/>
+      <SiteTools tools={tools.default}></SiteTools>
       <p>
         You can check out the source code on <a href="{urls.githubProjectRepo.full}" target="_blank">GitHub</a>. 
         PR's are welcome 🤠

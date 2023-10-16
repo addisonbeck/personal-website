@@ -1,27 +1,34 @@
 <script lang="ts">
   import './sitetools.css';
+  import Table from './Table.svelte'
+  import TableRow from './TableRow.svelte'
+  import TableRowItem from './TableRowItem.svelte'
   export let tools: { title: string, href: string, purpose: string, svg: string }[];
 </script>
 
-<div class="site-tools">
-  <div class="site-tools-heading">
-    <span class="cell left-cell">Tool</span>
-    <span class="cell right-cell">Purpose</span>
-  </div>
-  <div class="site-tools-body">
+{#if tools}
+  <Table>
+    <TableRow slot="header">
+      <TableRowItem>Tool</TableRowItem>
+      <TableRowItem>Purpose</TableRowItem>
+    </TableRow>
     {#each tools as tool}
-      <div class="site-tools-item">
-        <div class="site-tools-item-link cell left-cell">
-          <div class="site-tools-item-link-svg">
-            {@html tool.svg}
-          </div>
-          <a href="{tool.href}" target="_blank">{tool.title}</a>
-        </div>
-        <div class="cell right-cell">
-          {tool.purpose}
-        </div>
-      </div>
+      <TableRow>
+        <TableRowItem>
+          <img class="table-svg" src="{tool.svg}" alt="{tool.title} logo"/>
+          <a href="{tool.href}">{tool.title}</a>
+        </TableRowItem>
+        <TableRowItem>
+          {@html tool.purpose}
+        </TableRowItem>
+      </TableRow>
     {/each}
-  </div>
-</div>
+  </Table>
+{/if}
 
+<style>
+  .table-svg {
+    height: 1em;
+    width: auto
+  }
+</style>

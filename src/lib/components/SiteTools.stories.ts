@@ -11,3 +11,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+const tools = (await import ('../data/SiteTools')).default;
+export const Hydrated: Story = {
+  args: {
+    tools: tools
+  }
+};
