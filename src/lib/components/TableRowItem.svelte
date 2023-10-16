@@ -5,8 +5,11 @@
 <style>
   .table-cell {
     padding: 10px;
-    display: flex;
+    display: grid;
+    grid-auto-flow: column dense; 
+    justify-content: start;
     align-items: center;
+    column-gap: 5px;
   }
 
   :global(.table-cell + .table-cell) {

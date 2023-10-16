@@ -1,13 +1,19 @@
-<div class="table">
-  {#if $$slots.header}
-    <div class="table-header">
-      <slot name="header"/>
+<script lang="ts">
+  export let headerAlignment: "center" | "start" = "center";
+</script>
+
+{#if $$slots.default || $$slots.header}
+  <div class="table">
+    {#if $$slots.header}
+      <div class="table-header {headerAlignment}">
+        <slot name="header"/>
+      </div>
+    {/if}
+    <div class="table-body">
+      <slot/>
     </div>
-  {/if}
-  <div class="table-body">
-    <slot/>
   </div>
-</div>
+{/if}
 
 <style>
   .table {
@@ -22,8 +28,8 @@
     font-weight: 700;
   }
 
-  :global(.table-header * *) {
-    text-align: center;
+  :global(.table-header.center .table-row .table-cell) {
+    justify-content: center;
   }
 
   .table-body {
