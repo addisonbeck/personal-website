@@ -1,11 +1,13 @@
-async function load() {
+import type SiteTools from '../types/SiteTools';
+
+async function load(): Promise<SiteTools> {
   const svelteLogo = await import(`$lib/assets/sveltelogo.svg`);
   const typescriptLogo = await import('$lib/assets/tslogo.svg');
   const htmlLogo = await import('$lib/assets/htmllogo.svg');
   const cssLogo = await import('$lib/assets/csslogo.svg');
   const doLogo = await import ('$lib/assets/dologo.svg');
   const storybookLogo = await import('$lib/assets/storybooklogo.svg');
-  const tools: { title: string, href: string, purpose: string, svg: string}[] =  [
+  const tools: SiteTools =  [
     { title: "Svelte", href: "https://svelte.dev", purpose: "As a front-end component framework", svg: svelteLogo.default },
     { title: "Typescript", href: "https://www.typescriptlang.org", purpose: "To make Javascript more fun to write", svg: typescriptLogo.default},
     { title: "HTML", href: "https://html.spec.whatwg.org", purpose: "For obvious reasons", svg: htmlLogo.default},
@@ -21,6 +23,5 @@ async function load() {
   return tools;
 }
 
-const tools = await load();
+export default load;
 
-export default tools;

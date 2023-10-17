@@ -2,9 +2,14 @@
   import name from '$lib/data/Name'
   import urls from '$lib/data/Urls'
   import SiteTools from './SiteTools.svelte'
+
+  async function load() {
+    const tools = await (await import('$lib/data/SiteTools')).default()
+    return tools;
+  }
 </script>
 <div class="site-summary">
-  {#await import('$lib/data/SiteTools') then tools}
+  {#await load() then tools}
     <div class="site-summary-heading">
       <h2>Hi, I'm {name.first}</h2>
     </div>
@@ -14,7 +19,7 @@
         I've written code used by millions of people.
         This site in particular is built using:
       </p>
-      <SiteTools tools={tools.default}></SiteTools>
+      <SiteTools tools={tools}></SiteTools>
       <p>
         You can check out the source code on <a href="{urls.githubProjectRepo.full}" target="_blank">GitHub</a>. 
         PR's are welcome 🤠

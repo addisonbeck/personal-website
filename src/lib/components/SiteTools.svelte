@@ -1,9 +1,10 @@
 <script lang="ts">
+	import type SiteTools from '$lib/types/SiteTools';
   import './sitetools.css';
   import Table from './Table.svelte'
   import TableRow from './TableRow.svelte'
   import TableRowItem from './TableRowItem.svelte'
-  export let tools: { title: string, href: string, purpose: string, svg: string }[];
+  export let tools: SiteTools;
 </script>
 
 {#if tools}

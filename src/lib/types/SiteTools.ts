@@ -4,3 +4,5 @@ type SiteTools = {
   purpose: string,
   svg: string
 }[]
+
+export default SiteTools;
