@@ -4,7 +4,7 @@
   import Table from './Table.svelte'
   import TableRow from './TableRow.svelte'
   import TableRowItem from './TableRowItem.svelte'
-  export let tools: SiteTools;
+  export let tools: SiteTools | undefined = undefined;
 </script>
 
 {#if tools}
