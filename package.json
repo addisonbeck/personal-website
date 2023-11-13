@@ -18,7 +18,7 @@
 	"devDependencies": {
 		"@codemirror/lang-json": "^6.0.1",
 		"@playwright/test": "^1.28.1",
-		"@storybook/addon-essentials": "^7.4.5",
+		"@storybook/addon-essentials": "^7.5.3",
 		"@storybook/addon-interactions": "^7.4.5",
 		"@storybook/addon-links": "^7.4.5",
 		"@storybook/blocks": "^7.4.5",
