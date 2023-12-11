@@ -22,7 +22,7 @@
 		"@storybook/addon-interactions": "^7.4.5",
 		"@storybook/addon-links": "^7.4.5",
 		"@storybook/blocks": "^7.4.5",
-		"@storybook/svelte": "^7.4.5",
+		"@storybook/svelte": "^7.6.4",
 		"@storybook/sveltekit": "^7.4.5",
 		"@storybook/testing-library": "^0.2.1",
 		"@sveltejs/adapter-auto": "^2.0.0",
